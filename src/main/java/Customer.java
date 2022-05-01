@@ -4,10 +4,10 @@
 //
 
 public class Customer {
-    private String firstName;
-    private String lastName;
-    private String emailAddress;
-    private String password;
+    private final String firstName;
+    private final String lastName;
+    private final String emailAddress;
+    private final String password;
     public static final String dataSourceName = "customer";
 
     public Customer(String emailAddress, String firstName, String lastName, String password) {

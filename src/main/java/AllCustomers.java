@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class AllCustomers {
-    private List<Customer> listOfCustomers = new ArrayList();
+    private final List<Customer> listOfCustomers = new ArrayList();
     private boolean customersLoaded = false;
 
     public AllCustomers() {
