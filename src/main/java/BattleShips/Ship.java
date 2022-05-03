@@ -1,3 +1,5 @@
+package BattleShips;
+
 public class Ship {
     int x;
     int y;

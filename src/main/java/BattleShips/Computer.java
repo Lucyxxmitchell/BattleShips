@@ -1,5 +1,7 @@
+package BattleShips;
+
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class Computer {
     private static Random rand = new Random();

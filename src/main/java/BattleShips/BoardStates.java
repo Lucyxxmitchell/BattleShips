@@ -1,3 +1,5 @@
+package BattleShips;
+
 public enum BoardStates {
     EMPTY(" "),
     CONTAINS_SHIP("@"),

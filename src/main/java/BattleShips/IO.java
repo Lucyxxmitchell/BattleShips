@@ -1,15 +1,18 @@
+package BattleShips;
+
+import Console.ConsoleInput;
+
 import java.util.Scanner;
 
 public class IO {
     public final static char[] ALPHA = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 
-    public static Direction getDirection(Scanner scanner) {
+    public static Direction getDirection() {
         boolean validDirection = false;
         String direction = null;
         String message = "Enter direction:";
         while (!validDirection) {
-            System.out.println(message);
-            direction = scanner.nextLine();
+            direction = ConsoleInput.input(message);
             validDirection = validDirection(direction);
             message = "Invalid direction, Please re-enter";
         }
@@ -22,7 +25,7 @@ public class IO {
     }
 
 
-    public static int[] getPoints(Scanner scanner) {
+    public static int[] getPoints() {
         boolean validY = false;
         boolean validX = false;
         int[] validPoints = new int[2];
@@ -33,7 +36,7 @@ public class IO {
         while (!validY || !validX) {
             System.out.println(message);
 
-            String coordinates = scanner.nextLine();
+            String coordinates = ConsoleInput.input(message);
             yInteger = A1Z26Converter(coordinates.charAt(0));
             xInteger = Character.getNumericValue(coordinates.charAt(1));
 

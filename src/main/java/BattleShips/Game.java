@@ -1,8 +1,6 @@
-import java.util.Scanner;
-
+package BattleShips;
 
 public class Game {
-    Scanner scanner = new Scanner(System.in);
 
     public void play() {
         Board playerBoard = new Board();
@@ -54,9 +52,9 @@ public class Game {
         int count = 0;
 
         while (!checkEmptySpot) {
-            int[] validPoints = IO.getPoints(scanner);
+            int[] validPoints = IO.getPoints();
             System.out.println(validPoints[1] + "," + validPoints[0]);
-            Direction direction = IO.getDirection(scanner);
+            Direction direction = IO.getDirection();
 
             System.out.println(direction);
 

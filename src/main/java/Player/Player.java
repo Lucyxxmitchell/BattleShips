@@ -1,16 +1,16 @@
-//
+package Player;//
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by FernFlower decompiler)
 //
 
-public class Customer {
+public class Player {
     private final String firstName;
     private final String lastName;
     private final String emailAddress;
     private final String password;
     public static final String dataSourceName = "customer";
 
-    public Customer(String emailAddress, String firstName, String lastName, String password) {
+    public Player(String emailAddress, String firstName, String lastName, String password) {
         this.emailAddress = emailAddress;
         this.firstName = firstName;
         this.lastName = lastName;

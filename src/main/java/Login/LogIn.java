@@ -1,36 +1,36 @@
+package Login;
+
+import BattleShips.Game;
+import Console.ConsoleInput;
+import Player.Player;
+
 import java.util.List;
-import java.util.Scanner;
 
 public class LogIn {
-    private final Scanner userInput = new Scanner(System.in);
     private final Game game = new Game();
 
-    private String input(String message) {
-        System.out.println(message);
-        return userInput.nextLine();
-    }
 
     private String getPassword(String emailAddress){
-        AllCustomers allCustomers = new AllCustomers();
+        AllPlayers allPlayers = new AllPlayers();
         String password = "";
-        List<Customer> listOfCustomers = allCustomers.getListOfCustomers();
-        for (Customer customer :listOfCustomers){
-            if (customer.getEmailAddress().equals(emailAddress)){
-                password = customer.getPassword();
+        List<Player> listOfPlayers = allPlayers.getListOfCustomers();
+        for (Player player : listOfPlayers){
+            if (player.getEmailAddress().equals(emailAddress)){
+                password = player.getPassword();
             }
         }
         return password;
     }
 
     public void logIn() {
-        String emailAddress = input("Enter email address");
+        String emailAddress = ConsoleInput.input("Enter email address");
         String password = getPassword(emailAddress);
         boolean loggedIn = false;
 
         if (password == "") {
             System.out.println("You are not a user");
         }
-        else if (password.equals(input("Enter password"))){
+        else if (password.equals(ConsoleInput.input("Enter password"))){
             System.out.println("You are logged in");
             loggedIn = true;
         }
