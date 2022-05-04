@@ -3,7 +3,7 @@ package Login;
 import BattleShips.Game;
 import Console.ConsoleInput;
 import Player.Player;
-
+import Player.AllPlayers;
 import java.util.List;
 
 public class LogIn {
@@ -13,7 +13,7 @@ public class LogIn {
     private String getPassword(String emailAddress){
         AllPlayers allPlayers = new AllPlayers();
         String password = "";
-        List<Player> listOfPlayers = allPlayers.getListOfCustomers();
+        List<Player> listOfPlayers = allPlayers.getListOfPlayers();
         for (Player player : listOfPlayers){
             if (player.getEmailAddress().equals(emailAddress)){
                 password = player.getPassword();
