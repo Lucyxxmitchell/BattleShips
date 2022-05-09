@@ -3,7 +3,7 @@ package Player;//
 // (powered by FernFlower decompiler)
 //
 
-import Login.ReadDelimitedFile;
+import ReadFile.ReadDelimitedFile;
 
 import java.util.ArrayList;
 import java.util.Iterator;

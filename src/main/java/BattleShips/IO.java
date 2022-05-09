@@ -1,11 +1,15 @@
 package BattleShips;
-
 import Console.ConsoleInput;
-
-import java.util.Scanner;
 
 public class IO {
     public final static char[] ALPHA = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+
+    public static void displayInstructions(){
+        System.out.println("Now it's time to place your ships");
+        System.out.println("You will place 5 ships, all will be 3 pegs in length.");
+        System.out.println("First you will be asked to enter the starting co-ordinates of your ship. Enter the letter then the number like this: B3 ");
+        System.out.println("Then you will be asked for the direction of your ships, Enter D for down and R for right.");
+    }
 
     public static Direction getDirection() {
         boolean validDirection = false;
@@ -24,7 +28,6 @@ public class IO {
         return direction.equals("R") || direction.equals("D");
     }
 
-
     public static int[] getPoints() {
         boolean validY = false;
         boolean validX = false;
@@ -34,7 +37,6 @@ public class IO {
 
         String message = "Enter starting co-ordinates:";
         while (!validY || !validX) {
-            System.out.println(message);
 
             String coordinates = ConsoleInput.input(message);
             yInteger = A1Z26Converter(coordinates.charAt(0));
@@ -44,6 +46,7 @@ public class IO {
             validX = isOnBoard(xInteger);
             message = "Point invalid. Re-enter";
         }
+
         validPoints[0] = yInteger;
         validPoints[1] = xInteger;
         return validPoints;
@@ -52,7 +55,6 @@ public class IO {
     private static boolean isOnBoard(int point) {
         return ((point >= 0) && (point <= 9));
     }
-
 
     private static int A1Z26Converter(char yLetter) {
         int yInteger = 0;

@@ -15,22 +15,18 @@ public class Board {
     }
 
     public Boolean checkFreeSpace(int[] points, Direction direction) {
-//        points; [0] = y; [1] = x
         boolean enoughSpace;
         if (direction.equals(Direction.RIGHT)) {
             enoughSpace = points[1] + 5 < 10;
             if (!enoughSpace) return false;
-
             for (int i = 0; i < 5; i++) {
                 if (!board[points[0]][points[1] + i].equals(BoardStates.EMPTY)) {
                     return false;
                 }
             }
-
         } else {
             enoughSpace = points[0] + 5 < 10;
             if (!enoughSpace) return false;
-
             for (int i = 0; i < 5; i++) {
                 if (!board[points[0] + i][points[1]].equals(BoardStates.EMPTY)) {
                     return false;
@@ -41,15 +37,12 @@ public class Board {
     }
 
     public void place(int[] points, Direction direction) {
-        System.out.println("Done");
         if (direction.equals(Direction.RIGHT)) {
 
             for (int i = 0; i < 5; i++) {
-                //System.out.println((points[1]+i));
                 board[points[0]][points[1] + i] = BoardStates.CONTAINS_SHIP;
             }
         } else {
-
             for (int i = 0; i < 5; i++) {
                 board[points[0] + i][points[1]] = BoardStates.CONTAINS_SHIP;
             }

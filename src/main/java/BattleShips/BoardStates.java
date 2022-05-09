@@ -8,7 +8,6 @@ public enum BoardStates {
 
     private final String label;
 
-
     BoardStates(String label) {
         this.label = label;
     }

@@ -1,7 +1,5 @@
 package BattleShips;
-
 import java.util.Random;
-
 
 public class Computer {
     private static Random rand = new Random();
@@ -13,6 +11,7 @@ public class Computer {
         points[1] = rand.nextInt(10);
         return points;
     }
+
     public static Direction getComputerDirection(){
         String[] directions = {"R", "D"};
         int select = rand.nextInt(directions.length);
