@@ -20,7 +20,7 @@ public class TestBoard {
 
         int[] points = {2,3};
         Direction direction = Direction.RIGHT;
-        Assert.assertEquals(false, testBoard.checkFreeSpace(points, direction));
+        Assert.assertFalse(testBoard.checkFreeSpace(points, direction));
     }
     @Test
     public void TestCheckFreeSpaceOffBoard(){
@@ -28,7 +28,7 @@ public class TestBoard {
 
         int[] points = {10,3};
         Direction direction = Direction.DOWN;
-        Assert.assertEquals(false, testBoard.checkFreeSpace(points, direction));
+        Assert.assertFalse(testBoard.checkFreeSpace(points, direction));
     }
     @Test
     public void testPlace(){
@@ -39,11 +39,11 @@ public class TestBoard {
         testBoard.place(points, direction);
         boolean condition = true;
         for (int i = 0; i < 5; i++) {
-            if (testBoard.board[points[0]][points[1] + i] != BoardStates.CONTAINS_SHIP){
+            if (testBoard.board[points[0]][points[1] + i] == BoardStates.EMPTY){
                 condition = false;
             }
         }
-        Assert.assertEquals(true, condition);
+        Assert.assertTrue(condition);
     }
 
 }

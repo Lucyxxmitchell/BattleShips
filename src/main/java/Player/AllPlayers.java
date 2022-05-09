@@ -18,7 +18,7 @@ public class AllPlayers {
 
     private List<String[]> loadRawPlayers() {
         ReadDelimitedFile readDelimitedFile = new ReadDelimitedFile();
-        return readDelimitedFile.getFileData("customer.csv");
+        return readDelimitedFile.getFileData("accounts.csv");
     }
 
     private List<Player> loadAsPlayers() {

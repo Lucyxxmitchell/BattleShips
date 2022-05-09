@@ -3,6 +3,7 @@ import Console.ConsoleInput;
 
 public class IO {
     public final static char[] ALPHA = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    public static ConsoleInput userInput = new ConsoleInput();
 
     public static void displayInstructions(){
         System.out.println("Now it's time to place your ships");
@@ -16,7 +17,7 @@ public class IO {
         String direction = null;
         String message = "Enter direction:";
         while (!validDirection) {
-            direction = ConsoleInput.input(message);
+            direction = userInput.input(message);
             validDirection = validDirection(direction);
             message = "Invalid direction, Please re-enter";
         }
@@ -24,7 +25,7 @@ public class IO {
         return (direction.equals("R")) ? Direction.RIGHT : Direction.DOWN;
     }
 
-    private static boolean validDirection(String direction) {
+    static boolean validDirection(String direction) {
         return direction.equals("R") || direction.equals("D");
     }
 
@@ -38,8 +39,8 @@ public class IO {
         String message = "Enter starting co-ordinates:";
         while (!validY || !validX) {
 
-            String coordinates = ConsoleInput.input(message);
-            yInteger = A1Z26Converter(coordinates.charAt(0));
+            String coordinates = userInput.input(message);
+            yInteger = Ais0Zis25Converter(coordinates.charAt(0));
             xInteger = Character.getNumericValue(coordinates.charAt(1));
 
             validY = isOnBoard(yInteger);
@@ -52,11 +53,11 @@ public class IO {
         return validPoints;
     }
 
-    private static boolean isOnBoard(int point) {
+    static boolean isOnBoard(int point) {
         return ((point >= 0) && (point <= 9));
     }
 
-    private static int A1Z26Converter(char yLetter) {
+    static int Ais0Zis25Converter(char yLetter) {
         int yInteger = 0;
         int i;
 
@@ -67,4 +68,5 @@ public class IO {
         }
         return yInteger;
     }
+
 }

@@ -14,6 +14,11 @@ public class LoadFromFake implements Load {
 
     @Override
     public List<String> getLastLines(String fileName, int numberOfLines) {
-        return null;
+        List<String> lastLines = new ArrayList<String>();
+        List<String> dataFile = this.getFileData(fileName);
+        for (int counter=dataFile.size() - numberOfLines;counter < dataFile.size();counter++){
+            lastLines.add(dataFile.get(counter));
+        }
+        return lastLines;
     }
 }
